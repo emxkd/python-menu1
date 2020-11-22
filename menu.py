@@ -19,7 +19,7 @@ if passwd != "divya":
 dnf sysop1():
   while True:
       os.system("tput setaf 2")
-      os.system("\n\t\t\tfiglet -t -k webserver menu \n\n\n")
+      os.system("\n\t\t\tfiglet -t -k system operations \n\n\n")
       print("""
       \n
       System Operations for local system:
@@ -45,59 +45,59 @@ dnf sysop1():
 
       if ch == 1:
         os.system("date")
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch == 2:
         os.system("cal")
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch == 3:
         os.system("gnome-control-center")
-        i = input("do you want to continue on webserver menu [y/n]:\t")
+        i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
       elif ch == 4:
         os.system("lscpu")
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
       elif ch == 5:
         name = input("enter package name:")
         os.system("yum install {} -y".format(name))
-        i = input("do you want to continue on webserver menu [y/n]:\t")
+        i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
       elif ch == 6:
         name = input ("enter package name:")
         os.system("yum info {}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
       elif ch == 7:
         num = input ("enter the service name:")
         os.system("systemctl status {}".format(num))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
       elif ch == 8:
         os.system("rpm -qa")
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
       elif ch == 9:
         name = input ("enter software name:")
         os.system("yum info {}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
@@ -105,35 +105,35 @@ dnf sysop1():
         new_uswer = input ("enter name of the new user:")
         os.system("sudo useradd {}".format(new_user))
         os.system("id -u {}".format(new_user))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
       elif ch == 11:
         name = input ("name the user:")
         os.system("sudo userdel {}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
     
       elif ch == 12:       
         name=input("name your directory :")
         os.system("mkdir /{}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch == 13:       
         name=input("name of the service :")
         os.system("systemctl start {}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch == 14:       
         name=input("name of the service :")
         os.system("systemctl stop {}".format(name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
       
@@ -143,7 +143,7 @@ dnf sysop1():
 dnf sysop2():
   while True:
       os.system("tput setaf 2")
-      os.system("\n\t\t\tfiglet -t -k webserver menu \n\n\n")
+      os.system("\n\t\t\tfiglet -t -k system operations \n\n\n")
       print("""
       \n
       System Operations for remote system:
@@ -170,28 +170,28 @@ dnf sysop2():
       if ch1 == 1:
         ip = input("Enter the ip of the system:\t")
         os.system("ssh {} date".format(ip))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch1 == 2:
         ip = input("Enter the ip of the system:\t")
         os.system("ssh {} cal".format(ip))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
       elif ch1 == 3:
         ip = input("Enter the ip of the system:\t")
         os.system("ssh {} gnome-control-center".format(ip))
-        i = input("do you want to continue on webserver menu [y/n]:\t")
+        i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
       elif ch1 == 4:
         ip = input("Enter the ip of the system:\t")
         os.system("ssh {} lscpu".format(ip))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
@@ -199,7 +199,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name = input("enter package name:")
         os.system("ssh {} yum install {} -y".format(ip, name))
-        i = input("do you want to continue on webserver menu [y/n]:\t")
+        i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 
@@ -207,7 +207,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name = input ("enter package name:")
         os.system("ssh {} yum info {}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
@@ -215,14 +215,14 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         num = input ("enter the service name:")
         os.system("ssh {} systemctl status {}".format(ip, num))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
       elif ch1 == 8:
         ip = input("Enter the ip of the system:\t")
         os.system("ssh {} rpm -qa".format(ip))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
@@ -230,7 +230,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name = input ("enter software name:")
         os.system("ssh {} yum info {}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
@@ -239,7 +239,7 @@ dnf sysop2():
         new_uswer = input ("enter name of the new user:")
         os.system("ssh {} sudo useradd {}".format(ip, new_user))
         os.system("ssh {} id -u {}".format(ip, new_user))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
   
@@ -247,7 +247,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name = input ("name the user:")
         os.system("ssh {} sudo userdel {}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
     
@@ -255,7 +255,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name=input("name your directory :")
         os.system("ssh {} mkdir /{}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
@@ -263,7 +263,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name=input("name of the service :")
         os.system("ssh {} systemctl start {}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
 	
@@ -271,7 +271,7 @@ dnf sysop2():
         ip = input("Enter the ip of the system:\t")
         name=input("name of the service :")
         os.system("ssh {} systemctl stop {}".format(ip, name))
-	i = input("do you want to continue on webserver menu [y/n]:\t")
+	i = input("do you want to continue on system menu [y/n]:\t")
         if i != 'y':
           break
       
@@ -519,67 +519,103 @@ dnf lvm():
       if vm == 1:
         d_name = input("Enter the disk name:")
         os.system("fdisk -l {}".format(d_name))
-        i = input("do you want to continue on docker menu [y/n]:\t")
+        i = input("do you want to continue on lvm menu [y/n]:\t")
         if i != 'y':
           break
       
       elif vm ==2:
         part=input("Enter the partition name(e.g. /dev/sdb1): ")
         os.system("mkfs.ext4 {}".format(part))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
       
       elif vm == 3:
         folder_name=input("Enter the folder name on which you want to mount the partition. ")
         part_name = input("Enter the formatted partition full name: ")
         os.system("mount {} {}".format(part_name, folder_name))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
       
       elif vm == 4:
         folder_name=input("Enter the folder name on which you want to unmount the partition. ")
         part_name = input("Enter the partition full name: ")
         return os.system("umount {} {}".format(part_name, folder_name))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
       
       elif vm == 5:
         os.system("df -h")
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
 
       elif vm == 6:
         disk_name=input("Enter the disk name :")
         os.system("pvcreate {}".format(disk_name))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 7:
         disk_name=input("Enter the disk name :")
         os.system("pvdisplay {}".format(disk_name))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 8:
         pv1=input("Enter first PV name:")
         pv2=input("Enter second PV name:")
         vg=input("Enter the name of the VG:")
         os.system("vgcreate {} {} {}".format(pv1, pv2, vg))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 9:
         vg=input("Enter the VG name:")
         os.system("vgdisplay {}".format(vg))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 10:
         size=input("Enter the size of the Logical volume(e.g. 8G):")
         vg=input("Enter the name of the VG:")
         lv=input("Enter the name of the Logical volume:")
         os.system("lvcreate --size {} --name {} {}".format(size, lv, vg))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 11:
         lv=input("Enter the name of the Logical volume:")
         vg=input("Enter the name of the VG:")
         os.system("lvdisplay {}/{}".format(vg, lv))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
 
       elif vm == 12:
         lv=input("Enter the name of the Logical volume:")
         size=input("How much size you want to extend(e.g. 8G):")
         os.system("lvextend --size +{} {}".format(size, lv))
         os.system("resize2fs {}".format(lv))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 13:
         lv=input("Enter the name of the Logical volume:")
         size=input("How much size you want to reduce(e.g. 8G):")
         os.system("lvreduce --size -{} {}".format(size, lv))
         os.system("resize2fs {}".format(lv))
+        i = input("do you want to continue on lvm menu [y/n]:\t")
+        if i != 'y':
+          break
     
       elif vm == 14:
         break()
@@ -587,17 +623,22 @@ dnf lvm():
 dnf aws():
   while True:
       os.system("tput setaf 2")
-      os.system("\n\t\t\tfiglet -t -k webserver menu \n\n\n")
+      os.system("\n\t\t\tfiglet -t -k aws menu \n\n\n")
       print("""
       \n
-      System Operations for local system:
-      -----------------------------------
+      AWS Menu:
+      ----------
       Press 1: To install aws cli software
       Press 2: Create a key-pair  
       Press 3: Create security-group
       Press 4: Launch EC2 instance
-      Press 5: Create and attach a volume to EC2 instance
-      Press 15: Back to main menu
+      Press 5: Describe EC2 instances
+      Press 6: Create and attach a volume to EC2 instance
+      Press 7: Create a S3 bucket
+      Press 8: Upload objects in S3 bucket
+      Press 9: Lunch a cloudfront
+      Press 10: Configure cli for iam user
+      Press 11: Back to main menu
       """)
       as = int(input("Enter your choice:\t"))
       os.system("tput setaf 15")
@@ -607,6 +648,84 @@ dnf aws():
         os.system("unzip awscliv2.zip")
         os.system("sudo ./aws/install")
         os.system("aws --version")
-        inter = input("do you want to continue on aws menu [y/N]:\t")
-        if inter != 'y' and inter!= 'Y':
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
           break
+ 
+      elif as == 2:
+        name = input ("enter key-pair name:")
+        os.system("aws ec2 create-key-pair --key-name {}".format(name))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+  
+      elif as == 3:
+        name = input ("enter security groupe name:")
+        des=input("Write description:")
+        os.system("aws ec2 create-security-group --group-name {} --description {}".format(name,des))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+  
+      elif as == 4:
+        name = input ("enter image id:")
+        sg=input("Security group id:")
+        subnet= input("Subnet id:")
+        key= input("key name:")
+        os.system("aws ec2 run-instances --image-id {} --instance-type t2.micro --security-group-ids {} --subnet-id {} --key-name {}".format(name,sg,subnet,key))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+	
+      elif aws_input == 5:
+        os.system("aws ec2  describe-instances")
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+  
+      elif as == 6:
+        az = input ("enter availability zone:")
+        vtype=input("Volume type:")
+        insid=input("enter instance id to which you want to attach")
+        vid= input("Enter volume id which is to be attached")	
+        os.system("aws ec2 create-volume --availability-zone {} --size 1 --volume-type {}".format(az, vtype))
+        os.system("aws ec2 attach-volume --device xvdh --instance-id {} --volume-id {}".format(insid, vid))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+	
+      elif as == 7:
+        bucket_name=input("give an identical bucket name:\t")
+        os.system("aws s3api create-bucket --bucket {} --region ap-south-1 --acl public-read --create-bucket-configuration LocationConstraint=ap-south-1".format(bucket_name))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break 
+
+      elif as == 8:
+        print("Available s3 bucket: " )
+        os.system("aws s3 ls")
+        bucket_name=input("give bucket name where you want to upload the object:\t")
+        object_name=input("give the full path of the file which you want to upload:\t")
+        os.system("aws s3 cp {} s3://{}/".format(object_name,bucket_name))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+
+      elif as == 9:
+        bucket_name=input("buket name for cloudfront:\t")
+        os.system("aws cloudfront create-distribution --origin-domain-name {}.s3.amazonaws.com".format(bucket_name))
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+	
+      elif as == 10:
+        name = input("provide name to the aws user:\t")
+        os.system("aws configure --profile  {}".format(name))
+        os.system("aws configure list-profiles")
+        i = input("do you want to continue on aws menu [y/n]:\t")
+        if i != 'y':
+          break
+
+      elif as == 11:
+        break()
+	
