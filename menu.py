@@ -1273,6 +1273,33 @@ def add_client():
     os.system("jps")
 	
 
+dnf ans():
+  while True:
+      os.system("tput setaf 2")
+      os.system("\n\t\t\tfiglet -t -k ansible \n\n\n")
+      print("""
+      \n
+      Ansible Menu:
+      ----------
+      Press 1: To install ansible
+      Press 2: Create a key-pair  
+      Press 3: Create security-group
+      Press 4: Launch EC2 instance
+      Press 5: Describe EC2 instances
+      Press 6: Create and attach a volume to EC2 instance
+      Press 7: Create a S3 bucket
+      Press 8: Upload objects in S3 bucket
+      Press 9: Lunch a cloudfront
+      Press 10: Configure cli for iam user
+      Press 11: Back to main menu
+      """)
+      as = int(input("Enter your choice:\t"))
+      os.system("tput setaf 15")
 
-
+      if as == 1:
+        os.system("pip3 install ansible")
+        os.system("ansible --version")
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
 
