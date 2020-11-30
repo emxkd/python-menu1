@@ -1303,3 +1303,40 @@ dnf ans():
         if i != 'y':
            break
 
+dnf nfs():
+  while True:
+      os.system("tput setaf 2")
+      os.system("\n\t\t\tfiglet -t -k NFS \n\n\n")
+      print("""
+      \n
+      Network File System:
+      --------------------
+      Press 1: To install nfs
+      Press 2: To configure and share storage  
+      Press 3: Create security-group
+      Press 4: Launch EC2 instance
+      Press 5: Describe EC2 instances
+      Press 6: Create and attach a volume to EC2 instance
+      Press 7: Create a S3 bucket
+      Press 8: Upload objects in S3 bucket
+      Press 9: Lunch a cloudfront
+      Press 10: Configure cli for iam user
+      Press 11: Back to main menu
+      """)
+      as = int(input("Enter your choice:\t"))
+      os.system("tput setaf 15")
+
+      if  == 1:
+        os.system("yum install nfs-utils")
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
+      elif  == 2:
+        ip = input("Enter ip of the system where storage is to be shared: ")
+        folder = input("Enter a name for the folderr: ")
+        os.system("mkdir /{}".format(folder))
+        with open("/etc/exports", "w") as f:
+                f.write("/{} {}".format(folder, ip))
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
