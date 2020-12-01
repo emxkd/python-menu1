@@ -1282,16 +1282,10 @@ dnf ans():
       Ansible Menu:
       ----------
       Press 1: To install ansible
-      Press 2: Create a key-pair  
-      Press 3: Create security-group
-      Press 4: Launch EC2 instance
-      Press 5: Describe EC2 instances
-      Press 6: Create and attach a volume to EC2 instance
-      Press 7: Create a S3 bucket
-      Press 8: Upload objects in S3 bucket
-      Press 9: Lunch a cloudfront
-      Press 10: Configure cli for iam user
-      Press 11: Back to main menu
+      Press 2: Create inventory
+      Press 3: Ping all nodes to check connectivity
+      Press 4: Install httpd package in target nodes
+      Press 5: Back to main menu
       """)
       as = int(input("Enter your choice:\t"))
       os.system("tput setaf 15")
@@ -1299,6 +1293,20 @@ dnf ans():
       if as == 1:
         os.system("pip3 install ansible")
         os.system("ansible --version")
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
+	
+      elif as == 2:
+	n = input("Enter number of target nodes: ")
+        ip, user, password = input("Enter credentital of target node in the format (ip root password): ").split()
+        ("{}  ansible_user={} ansible_ssh_pass={} ansible_connection=ssh".format(ip, user, password))
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
+	
+      elif as == 3:
+        os.system("ansible all -m ping")
         i = input("do you want to continue on ansible menu [y/n]:\t")
         if i != 'y':
            break
