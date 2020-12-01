@@ -1298,9 +1298,12 @@ dnf ans():
            break
 	
       elif as == 2:
-	n = input("Enter number of target nodes: ")
         ip, user, password = input("Enter credentital of target node in the format (ip root password): ").split()
-        ("{}  ansible_user={} ansible_ssh_pass={} ansible_connection=ssh".format(ip, user, password))
+        with open("/root/ip.txt", "w") as f:
+              f.write("("{}  ansible_user={} ansible_ssh_pass={} ansible_connection=ssh".format(ip, user, password))")
+        with open("/etc/ansible/ansible.cfg", "w") as f:
+              f.write("[defaults]\n inventory = /root/ip.txt\n host_key_checking = false")
+        os.system("ansible all --list-hosts")
         i = input("do you want to continue on ansible menu [y/n]:\t")
         if i != 'y':
            break
@@ -1310,6 +1313,15 @@ dnf ans():
         i = input("do you want to continue on ansible menu [y/n]:\t")
         if i != 'y':
            break
+	
+      elif as == 4:
+        os.system("ansible all -m package -a "name=httpd state=present"")
+        i = input("do you want to continue on ansible menu [y/n]:\t")
+        if i != 'y':
+           break
+	
+     elif as == 5:
+        break
 
 dnf nfs():
   while True:
