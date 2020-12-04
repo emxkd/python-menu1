@@ -1298,11 +1298,13 @@ dnf ans():
            break
 	
       elif as == 2:
+        file = input("give name to inventory file")
+        os.system("touch {}.txt".format(file))
         ip, user, password = input("Enter credentital of target node in the format (ip root password): ").split()
-        with open("/root/ip.txt", "w") as f:
+        with open("/root/{}.txt".format(file), "w") as f:
               f.write("("{}  ansible_user={} ansible_ssh_pass={} ansible_connection=ssh".format(ip, user, password))")
         with open("/etc/ansible/ansible.cfg", "w") as f:
-              f.write("[defaults]\n inventory = /root/ip.txt\n host_key_checking = false")
+              f.write("[defaults]\n inventory = /root/{}.txt\n host_key_checking = false".format(file))
         os.system("ansible all --list-hosts")
         i = input("do you want to continue on ansible menu [y/n]:\t")
         if i != 'y':
@@ -1348,7 +1350,7 @@ dnf nfs():
 
       if  == 1:
         os.system("yum install nfs-utils")
-        i = input("do you want to continue on ansible menu [y/n]:\t")
+        i = input("do you want to continue on nfs menu [y/n]:\t")
         if i != 'y':
            break
       elif  == 2:
@@ -1357,6 +1359,17 @@ dnf nfs():
         os.system("mkdir /{}".format(folder))
         with open("/etc/exports", "w") as f:
                 f.write("/{} {}".format(folder, ip))
-        i = input("do you want to continue on ansible menu [y/n]:\t")
+        i = input("do you want to continue on nfs menu [y/n]:\t")
         if i != 'y':
            break
+	
+      elif  == 3:
+        ip = input("Enter ip of the system where storage is to be shared: ")
+        folder = input("Enter a name for the folderr: ")
+        os.system("mkdir /{}".format(folder))
+        with open("/etc/exports", "w") as f:
+                f.write("/{} {}".format(folder, ip))
+        i = input("do you want to continue on nfs menu [y/n]:\t")
+        if i != 'y':
+           break
+      
