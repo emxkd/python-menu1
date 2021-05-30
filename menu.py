@@ -1335,15 +1335,7 @@ dnf nfs():
       --------------------
       Press 1: To install nfs
       Press 2: To configure and share storage  
-      Press 3: Create security-group
-      Press 4: Launch EC2 instance
-      Press 5: Describe EC2 instances
-      Press 6: Create and attach a volume to EC2 instance
-      Press 7: Create a S3 bucket
-      Press 8: Upload objects in S3 bucket
-      Press 9: Lunch a cloudfront
-      Press 10: Configure cli for iam user
-      Press 11: Back to main menu
+      Press 3: Back to main menu
       """)
       as = int(input("Enter your choice:\t"))
       os.system("tput setaf 15")
@@ -1363,13 +1355,75 @@ dnf nfs():
         if i != 'y':
            break
 	
-      elif  == 3:
-        ip = input("Enter ip of the system where storage is to be shared: ")
-        folder = input("Enter a name for the folderr: ")
-        os.system("mkdir /{}".format(folder))
-        with open("/etc/exports", "w") as f:
-                f.write("/{} {}".format(folder, ip))
-        i = input("do you want to continue on nfs menu [y/n]:\t")
-        if i != 'y':
-           break
+    
+	
+	
+	
+
+while True:
+      os.system("tput setaf 11")
+      os.system("clear")
+      print("\t\t\tWelcome to the Automation Menu")
+      print("\t\t\t--------------------------------------")
+      os.system("`\n\t\t\t` figlet -t -k Automation Menu\n\n")
+      print("\nThis menu provide the various services to run any command or configure ")
+
+      print("""
+\n
+press 1 : For system operations
+press 2 : For Docker
+press 3 : For Logical Volume Management OPerations
+press 4 : For AWS
+press 5 : For webserver
+press 6 : For hadoop
+press 7 : For setting up ansible
+press 8 : For nfs
+press 9 : To exit
+""")
+   choice = int(input("Enter your choice:\t"))
+   os.system("tput setaf 7")
+   while True:
+          if choice == 1:
+            print("""press 1: for running docker in local system
+press 2 : For running docker in remote system""")
+                data = int(input("enter your choice:\t"))
+                if data == 1:
+                      sysop1()
+                elif data == 2:
+                      sysop2()
+                break
+
+          elif choice == 2:
+            print("""press 1: for running docker in local system
+press 2 : For running docker in remote system""")
+                datan = int(input("enter your choice:\t"))
+                if data == 1:
+                      docker1()
+                elif data == 2:
+                      docker2()
+                break
+
+          elif choice == 3:
+            lvm()
+            break
+          elif choice == 4:
+            aws()
+            break
+          elif choice == 5:
+            webserver()
+            break
+          elif choice == 6:
+            hadoop()
+            break
+          elif choice == 7:
+            ans()
+            break
+          elif choice == 8:
+            nfs()
+            break
+          elif choice == 9:
+            exit()
+   
+          
+
       
